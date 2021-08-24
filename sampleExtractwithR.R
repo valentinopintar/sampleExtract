@@ -10,7 +10,7 @@ speciesName <- 'Population'                                # headers data for sp
 xy <- species[,c("Longitude","Latitude")]                  # xy location
 envVar <- list.files(pattern=".tif$", full.names = TRUE)   # environmental variables (pattern = .asc, .tif, .grd...)
 rasterStack <- raster::stack(envVar)                               # a set of rasters with the same spatial range and resolution 
-valueExtract <- extract(rasterStack, xy)                   # extract values from rasters
+valueExtract <- raster::extract(rasterStack, xy)                   # extract values from rasters
 envSample <- cbind(speciesData, valueExtract)              # combining (merging) the source table and the obtained values 
 head(envSample, 10)
 
