@@ -3,7 +3,7 @@ rm(list=ls())                                              # always start with a
 setwd(choose.dir())                                        # sets the directory with the file to process
 getwd()
 
-speciesData <- read.xlsx(file.choose())                    # occurrences data
+speciesData <- openxlsx::read.xlsx(file.choose())          # occurrences data
 head(speciesData, 10)
 
 speciesName <- 'Population'                                # headers data for species name
